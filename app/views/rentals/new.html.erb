@@ -1,0 +1,5 @@
+<h1>Rent <strong><%= @rental.video.name %></strong></h1>
+
+<%= form_with(model: @rental) do |f| %>
+  <%= f.hidden_field :video_id %>
+<% end %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Videos</h1>
+  <div class="jumbotron">
+  <div class="row">
+    <% @videos.each do |video| %>
+      <div class="col-md-4 list">
+        <p class="title"><strong>Name: </strong><%= video.name %></p>
+        <p><strong>Genre: </strong><%= video.genre %></p>
+        <p><strong>Released: </strong><%= video.year_released %></p>
+        <p><strong>Classification: </strong><%= video.classification %></p>
+        <p class="description"><strong>Description: </strong><i><%= video.description %></i></p>
+        <p><%= link_to 'Show', video, class: "btn btn-primary" %>
+        <%= link_to 'Rent', new_rental_path(video_id: video.id), class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+
+<br>
+
+<%= link_to 'New Video', new_video_path %>
